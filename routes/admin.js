@@ -9,9 +9,9 @@ const CategoryController = require("../controller/OrderController");
 const create_update = require("../middleware/create_update");
 const validator = require("../middleware/validator")
 const AuthController = require('../controller/AuthController')
-
+const auth = require("../middleware/auth")
 
 // ADMIN 
-router.post("/register", AuthController.register)
-router.post("/login", AuthController.login)
+router.post("/register",AuthController.register)
+router.post("/login",auth, AuthController.login)
 module.exports = router;

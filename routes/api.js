@@ -8,6 +8,7 @@ const OrderController = require("../controller/OrderController")
 const CategoryController = require("../controller/OrderController");
 const create_update = require("../middleware/create_update");
 const validator = require("../middleware/validator")
+const auth = require("../middleware/auth")
 
 // Foods ENDPOINT
 router.get("/foods", FoodController.get_foods);
@@ -26,15 +27,14 @@ router.post("/categoryDelete/catId/:id");
 //User ENDPOINT
 router.get("/users",UserController.get_users);
 router.post("/userCreate",UserController.create);
-router.post("/userUpdate/userId/:id",UserController.update);
-router.post("/userDelete/userId/:id",UserController.delete_users);
+router.post("/userUpdate/userId/:id",auth, UserController.update);
+router.post("/userDelete/userId/:id",auth, UserController.delete_users);
 
 
 //Order ENDPOINT
 router.get("/orders", OrderController.get_orders);
 router.post("/orderCreate",OrderController.create);
-router.post("/orderUpdate/userId/:id",OrderController.update);
-router.post("/orderDelete/userId/:id",OrderController.delete_orders);
-// Admin ENDPOINT
+router.post("/orderUpdate/userId/:id",auth, OrderController.update);
+router.post("/orderDelete/userId/:id",auth, OrderController.delete_orders);
 
 module.exports = router;
