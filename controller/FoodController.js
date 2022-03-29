@@ -16,7 +16,7 @@ const get_foods = (req,res,next) =>{
     })
   })
 }
- 
+
 const findOne = (req,res,next) =>{
   const name = req.params.name
     Food.findOne({name:name}, function (err, data) {

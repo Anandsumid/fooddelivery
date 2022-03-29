@@ -35,5 +35,6 @@ router.get("/orders", OrderController.get_orders);
 router.post("/orderCreate",OrderController.create);
 router.post("/orderUpdate/userId/:id",OrderController.update);
 router.post("/orderDelete/userId/:id",OrderController.delete_orders);
+// Admin ENDPOINT
 
 module.exports = router;

@@ -16,7 +16,7 @@ const get_users = (req,res,next) =>{
       })
     })
   }
-   
+  
   const findOne = (req,res,next) =>{
     const name = req.params.name
       UserSchema.findOne({name:name}, function (err, data) {
