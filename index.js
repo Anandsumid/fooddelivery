@@ -5,7 +5,7 @@ const apiRoutes = require("./routes/api");
 const connection = require("./database");
 const adminRoutes = require('./routes/admin')
 const app = express();
-const PORT = 3002;
+const PORT = 3000;
 
 
 app.use(express.json());
